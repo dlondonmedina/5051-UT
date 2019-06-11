@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HW1c.Backend;
 using HW1c.Models;
@@ -100,6 +101,20 @@ namespace UnitTests.Backend
 
             // Assert
             Assert.IsTrue(result);
+
+        }
+
+        [TestMethod]
+        public void LogBackend_Index_Default_Should_Pass()
+        {
+            // Arrange
+            var myTest = LogBackend.Instance;
+
+            // Act
+            var result = myTest.Index();
+
+            // Assert
+            Assert.IsNotNull(result);
 
         }
     }
