@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HW1c.Backend;
+using HW1c.Models;
 
 namespace UnitTests.Backend
 {
@@ -16,6 +17,24 @@ namespace UnitTests.Backend
 
             // Assert
             Assert.IsNotNull(myTest);
+
+        }
+
+        [TestMethod]
+        public void LogBackend_Create_Default_Should_Pass()
+        {
+            // Arrange
+            var myTest = LogBackend.Instance;
+            var myLog = new LogModel
+            {
+                PhoneID = "Phone"
+            };
+
+            // Act
+            var result = myTest.Create(myLog);
+
+            // Assert
+            Assert.AreEqual(myLog.PhoneID, result.PhoneID);
 
         }
     }
