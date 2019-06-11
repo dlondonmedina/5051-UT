@@ -38,16 +38,16 @@ namespace UnitTests.Models
         public void ReportViewModel_NumberOfUsers_Set_Default_Should_Pass()
         {
             // Arrange
-            var myTest = new ReportViewModel();
-            var myUpdate = new ReportViewModel
+            var myTest = new ReportViewModel
             {
                 NumberOfUsers = 1
             };
+
             // Act
-            myTest.NumberOfUsers = 1;
+            myTest.NumberOfUsers = 2;
 
             // Assert
-            Assert.AreEqual(1, myTest.NumberOfUsers);
+            Assert.AreEqual(2, myTest.NumberOfUsers);
         }
     }
 }
