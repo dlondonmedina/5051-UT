@@ -69,15 +69,13 @@ namespace UnitTests.Models
         {
             // Arrange
             var myTest = new ReportViewModel();
-            var myList = new List<LogModel>();
-
-            myList.Add(new LogModel { PhoneID = "Phone" });
-
+            var myLogView = new LogViewModel();
+            
             // Act
-            myTest.LogViewModel.LogList = myList;
-            var result = myTest.LogViewModel.LogList;
+            myTest.LogViewModel = myLogView;
+      
             // Assert
-            Assert.AreEqual("Phone", result[0].PhoneID);
+            Assert.AreEqual(myLogView, myTest.LogViewModel);
         }
     }
 }
