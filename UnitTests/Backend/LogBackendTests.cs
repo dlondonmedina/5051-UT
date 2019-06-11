@@ -82,5 +82,25 @@ namespace UnitTests.Backend
             Assert.AreEqual(myUpdate.PhoneID, result.PhoneID);
 
         }
+
+        [TestMethod]
+        public void LogBackend_Delete_Default_Should_Pass()
+        {
+            // Arrange
+            var myTest = LogBackend.Instance;
+            var myLog = new LogModel
+            {
+                ID = "1",
+                PhoneID = "Phone"
+            };
+
+            // Act
+            myTest.Create(myLog);
+            var result = myTest.Delete("1");
+
+            // Assert
+            Assert.IsTrue(result);
+
+        }
     }
 }
