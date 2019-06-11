@@ -8,8 +8,15 @@ namespace UnitTests.Backend
     public class LogBackendTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void LogBackend_Instantiate_Default_Should_Pass()
         {
+            // Arrange
+            var myTest = LogBackend.Instance;
+            // Act
+
+            // Assert
+            Assert.IsNotNull(myTest);
+
         }
     }
 }
